@@ -1,6 +1,7 @@
 % generate random routes
-turn_filename = [ 'test_routes/', p.dataset, '_turns_', num2str(p.T),'_' , num2str(p.threshold) ,'.mat'];
-route_filename = [ 'test_routes/', p.dataset, '_routes_', num2str(p.T),'.mat'];
+directory = 'test_routes/'
+turn_filename = [ directory, p.dataset, '_turns_', num2str(p.T),'_' , num2str(p.threshold) ,'.mat'];
+route_filename = [ directory, p.dataset, '_routes_', num2str(p.T),'.mat'];
 
 if ~exist(directory, 'dir')
     mkdir(directory)
