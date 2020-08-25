@@ -11,6 +11,10 @@ Currently, we provide:
 - Testing routes used for the results reported in the paper.
 - Localisation algorithm implemented in Matlab. 
 
+### Prerequisites
+- Matlab
+- Tested on Mac and Linux
+
 ### Instructions to run an experiment
 
 1. Define parameters in the corresponding configuration file depending on the type of features to use.  ESParams.m for embedded descriptors and BSDParams.m for the case of BSDs.
@@ -18,3 +22,13 @@ Currently, we provide:
 Also, a struct with the top-5 best-estimated routes is saved.
 1. Results will be automatically saved in results directory with a path depending on the parameters selected.
 1. Plot results using calculate_accuracy.m script. 
+
+### Citation
+```latex
+@InProceedings{noe2020eccv,
+author = {N. Samano, M Zhou, A. Calway},
+title = {{ You Are Here: Geolocation by Embedding Maps and Images}},
+booktitle =  In Proc. of the European Conference on Computer Vision (ECCV),
+year = {2020},
+}
+```
