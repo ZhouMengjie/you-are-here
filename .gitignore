@@ -1,2 +1,3 @@
 *.m~
 parfor_progress.txt
+.DS_Store
