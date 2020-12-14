@@ -53,7 +53,12 @@ avg_time = time/p.T;
 
 
 %% Save localization test information
-path = fullfile(p.results_dir, p.dataset, num2str(p.turns));
+if strcmp(p.type, 'ES') 
+    path = fullfile(p.results_dir, p.dataset, num2str(p.turns),p.scale);
+else
+    path = fullfile(p.results_dir, p.dataset, num2str(p.turns));
+end
+
 if ~exist(path, 'dir')
     mkdir(path)
 end
