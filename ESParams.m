@@ -4,12 +4,12 @@ clear all;
 % add path 
 addpath(genpath(fullfile(pwd)))
 
-p.type = 'ES';                % Embedding space features
+p.type = 'BSD';               % Embedding space features
 p.name = '100%culling';       % A name for the experiment
-p.dataset = 'unionsquare5k';   % The name of the dataset       
-p.network = 'v2_12';          % The name of the network (model)
+p.dataset = 'unionsquare5k';  % The name of the dataset       
+p.network = 'resnet18';       % The name of the network (model), ES:v2_12 BSD:resnet18,vgg...
 
-p.T = 500;                    % Number of test turns
+p.T = 50;                     % Number of test turns
 p.mrl = 40;                   % Maximum route_length
 p.threshold = 30;
 p.turns = false;              % Whether to use turns in the localisation process
