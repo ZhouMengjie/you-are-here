@@ -1,5 +1,5 @@
 % generate random routes
-directory = 'test_routes/'
+directory = 'test_routes/';
 turn_filename = [ directory, p.dataset, '_turns_', num2str(p.T),'_' , num2str(p.threshold) ,'.mat'];
 route_filename = [ directory, p.dataset, '_routes_', num2str(p.T),'.mat'];
 
@@ -8,7 +8,7 @@ if ~exist(directory, 'dir')
 end
 
 if (isfile(route_filename) || isfile(turn_filename))
-    display('warning! file not created because it already existed. If you need a new one remove old file or rename it')
+    disp('warning! file not created because it already existed. If you need a new one remove old file or rename it');
 else
     load(['Data/','streetlearn/',p.dataset,'.mat'],'routes');
     if strcmp(p.dataset,'wallstreet5k') || strcmp(p.dataset,'hudsonriver5k')
