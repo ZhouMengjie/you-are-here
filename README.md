@@ -23,7 +23,7 @@ Also, a struct with the top-5 best-estimated routes is saved.
 3. Results will be automatically saved in ./results directory with a path depending on the parameters selected.
 4. Plot results using calculate_accuracy.m script.
 5. To generate your own testing routes, please run "generate_random_routes.m". To use extra turn information, please run "generate_turns.m".
-6. Plot figures presented in the paper, please refer to "bar.m", "culling_plot.m" and "mse_plot.m" files. All figures in '.eps' format are saved in ./figures directory. 
+6. Plot figures presented in the paper, please refer to "bar.m", "culling_plot.m" and "mse_plot.m". All figures in '.eps' format are saved in ./figures directory. 
 
 ### Citation
 ```latex
