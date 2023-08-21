@@ -28,7 +28,7 @@ Also, a struct with the top-5 best-estimated routes is saved.
 ### Disclaimer
 
 We make no claims about the stability or usability of the code provided in this repository.
-We provide no warranty of any kind, and accept no liability for damages of any kind that result from the use of this code
+We provide no warranty of any kind, and accept no liability for damages of any kind that result from the use of this code.
 
 ### Citation
 ```latex
