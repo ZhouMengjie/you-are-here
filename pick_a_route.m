@@ -5,16 +5,16 @@ close all
 
 % choose features type
 p.type = 'MES';               % Embedding space features
-p.name = '50%culling';       % A name for the experiment
+p.name = '50%culling';        % A name for the experiment
 p.turns = false;              % Whether to use turns in the localisation process
 p.topk = 1;                   % Save the topk best routes
-p.results_dir = 'results/MES';  % Results directory
+p.results_dir = 'results/MES';% Results directory
 dataset = 'wallstreet5k';
 test_num = 500;
 length_diff = 5;
 
 % load MES data
-network = 'dgcnnpolar';
+network = 'dgcnn2to3';
 path = fullfile(p.results_dir, dataset, num2str(p.turns), network, [p.name,'.mat']);   
 load(path); 
 MES_ranking = ranking;
@@ -28,7 +28,7 @@ for i = 1:test_num
 end
 
 % load ES data
-network = '2donly';
+network = '2d';
 path = fullfile(p.results_dir, dataset, num2str(p.turns), network, [p.name,'.mat']);   
 load(path); 
 ES_ranking = ranking;

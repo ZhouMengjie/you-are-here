@@ -14,7 +14,7 @@ p.turns = false;                % Whether to use turns in the localisation proce
 p.topk = 1;                     % Save the topk best routes
 p.results_dir = 'results/MES';  % Results directory
 p.features_dir = 'features';
-dataset = 'unionsquare5k';
+dataset = 'wallstreet5k';
 test_num = 500;
 city = 'manhattan';
 loops = 40;
@@ -22,17 +22,17 @@ loops = 40;
 load(['results/video/','final_routes','_',dataset,'.mat'],'final_routes');
 % k = randi([1,length(final_routes)]);
 % route_index = final_routes(k,1);
-route_index = 486; % 413, 267
+route_index = 413;
 k = find(final_routes(:,1) == route_index);
 disp(route_index);
-successful_route_length_mes = final_routes(k,2); % successfully localised length for es
-successful_route_length_es = final_routes(k,3);% successfully localised length for bsd
+successful_route_length_mes = final_routes(k,2); % successfully localised length for mes
+successful_route_length_es = final_routes(k,3);  % successfully localised length for es
 
 % load testing routes and turn information
 load(['test_routes/',dataset,'_routes_', num2str(test_num),'.mat']); 
 
 % Load ES features and best estimated routes
-network = '2donly';
+network = '2d';
 path = fullfile(p.results_dir, dataset, num2str(p.turns), network, [p.name,'.mat']);   
 load(path,'best_estimated_top5_routes'); 
 es_best = best_estimated_top5_routes;
@@ -44,7 +44,7 @@ es_routes = routes;
 
 
 % Load MES best estimated routes
-network = 'dgcnnpolar';
+network = 'dgcnn2to3';
 path = fullfile(p.results_dir, dataset, num2str(p.turns), network, [p.name,'.mat']);   
 load(path,'best_estimated_top5_routes'); 
 mes_best = best_estimated_top5_routes;
@@ -56,10 +56,10 @@ mes_routes = routes;
 
 % Find boundaries limits
 file_id = fopen(['Data/',dataset,'.csv']);
-coords = textscan(file_id, '%s%f%f%f%s', 'Delimiter', ',' );
-gt_x = coords{1,3};
-gt_y = coords{1,2};
-limits = [min(coords{1,3}) max(coords{1,3}) min(coords{1,2}) max(coords{1,2})];
+coords = textscan(file_id, '%f%f%f%s', 'Delimiter', ',' );
+gt_x = coords{1,2};
+gt_y = coords{1,1};
+limits = [min(coords{1,2}) max(coords{1,2}) min(coords{1,1}) max(coords{1,1})];
 range_x = abs(limits(1) - limits(2));
 range_y = abs(limits(3) - limits(4));
 fclose(file_id);
@@ -115,9 +115,9 @@ for key_frame = 1:loops
         delete(txhd);
     end
 
-    save_for_vis(1,key_frame) = test_route(route_index,key_frame);
-    save_for_vis(2,key_frame) = es_best{1, route_index}{1,key_frame}(1,key_frame);
-    save_for_vis(3,key_frame) = mes_best{1, route_index}{1,key_frame}(1,key_frame);
+    save_for_vis(1,key_frame) = test_route(route_index,key_frame); % gt
+    save_for_vis(2,key_frame) = es_best{1, route_index}{1,key_frame}(1,key_frame); % es
+    save_for_vis(3,key_frame) = mes_best{1, route_index}{1,key_frame}(1,key_frame);% mes
     parfor_progress('searching');
 end
 
