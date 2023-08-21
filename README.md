@@ -25,6 +25,11 @@ Also, a struct with the top-5 best-estimated routes is saved.
 5. To generate your own testing routes, please run "generate_random_routes.m". To use extra turn information, please run "generate_turns.m".
 6. Plot figures presented in the paper, please refer to "bar.m", "culling_plot.m" and "mse_plot.m". All figures in '.eps' format are saved in ./figures directory. 
 
+### Disclaimer
+
+We make no claims about the stability or usability of the code provided in this repository.
+We provide no warranty of any kind, and accept no liability for damages of any kind that result from the use of this code
+
 ### Citation
 ```latex
 @InProceedings{noe2020eccv,
