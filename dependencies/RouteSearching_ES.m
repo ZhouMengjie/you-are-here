@@ -6,7 +6,7 @@ best_top5_routes = {max_route_length};
 route_dist = {max_route_length};
 
 for m=1 : max_route_length
-    y = routes(t(m)).y;
+    y = routes(t(m)).y; % query
             
     if m > 1 
             if turns_flag == 1

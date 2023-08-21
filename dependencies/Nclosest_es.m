@@ -3,7 +3,7 @@ sz1 = size(R, 1);
 sz2 = size(R, 2);
 for i=1:sz1      
     k = R(i,sz2);
-    x = routes(k).x;
+    x = routes(k).x; % reference
     v = y - x;
     dist(i,1) = dist(i,1) + sqrt(v*v');
 end
