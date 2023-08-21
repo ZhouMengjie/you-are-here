@@ -9,7 +9,7 @@ p.name = '50%culling';        % A name for the experiment
 p.turns = false;              % Whether to use turns in the localisation process
 p.topk = 1;                   % Save the topk best routes
 p.results_dir = 'results/MES';% Results directory
-dataset = 'wallstreet5k';
+dataset = 'unionsquare5k';
 test_num = 500;
 length_diff = 5;
 

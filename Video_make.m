@@ -14,7 +14,7 @@ p.turns = false;                % Whether to use turns in the localisation proce
 p.topk = 1;                     % Save the topk best routes
 p.results_dir = 'results/MES';  % Results directory
 p.features_dir = 'features';
-dataset = 'wallstreet5k';
+dataset = 'unionsquare5k';
 test_num = 500;
 city = 'manhattan';
 loops = 40;
@@ -22,7 +22,7 @@ loops = 40;
 load(['results/video/','final_routes','_',dataset,'.mat'],'final_routes');
 % k = randi([1,length(final_routes)]);
 % route_index = final_routes(k,1);
-route_index = 413;
+route_index = 480;
 k = find(final_routes(:,1) == route_index);
 disp(route_index);
 successful_route_length_mes = final_routes(k,2); % successfully localised length for mes
@@ -101,7 +101,7 @@ for key_frame = 1:loops
     txhd = text(true_x1(key_frame) + 0.0005, true_y1(key_frame)+ 0.0005, num2str(key_frame),'FontSize',15);
     
     if key_frame < 2
-        lgd = legend([hd(1) eshd(1) meshd(1)], ['Ground Truth',' (Route Length = ',num2str(key_frame),')'], ['ES',' (Successfully Localized at step ',num2str(successful_route_length_es),')'], ['Ours',' (Successfully Localized at step ',num2str(successful_route_length_mes),')'],'Location', 'northeast');
+        lgd = legend([hd(1) eshd(1) meshd(1)], ['Ground Truth',' (Route Length = ',num2str(key_frame),')'], ['ES',' (Successfully Localized at step ',num2str(successful_route_length_es),')'], ['Ours',' (Successfully Localized at step ',num2str(successful_route_length_mes),')'],'Location', 'southeast');
         position = lgd.Position;
     else
         lgd = legend([hd(1) eshd(1) meshd(1)], ['Ground Truth',' (Route Length = ',num2str(key_frame),')'], ['ES',' (Successfully Localized at step ',num2str(successful_route_length_es),')'], ['Ours',' (Successfully Localized at step ',num2str(successful_route_length_mes),')'],'Location', position);
@@ -130,6 +130,5 @@ open(v)
 writeVideo(v,F)
 close(v)
 
-save(['us_vis','.mat'],'save_for_vis');
-
+save(['results/video/',dataset,'_vis.mat'],'save_for_vis');
 
