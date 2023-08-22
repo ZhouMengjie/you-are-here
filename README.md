@@ -34,7 +34,7 @@ We provide no warranty of any kind, and accept no liability for damages of any k
 ### Citation
 ```latex
 @InProceedings{noe2020eccv,
-author = {N. Samano, M Zhou, A. Calway},
+author = {N. Samano, M. Zhou, A. Calway},
 title = {{ You Are Here: Geolocation by Embedding Maps and Images}},
 booktitle =  In Proc. of the European Conference on Computer Vision (ECCV),
 year = {2020},
@@ -43,7 +43,7 @@ year = {2020},
 ```latex
 @article{zhou2023image,
   title={Image-based Geolocalization by Ground-to-2.5D Map Matching},
-  author={Zhou, Mengjie and Liu, Liu and Zhong, Yiran},
+  author={M. Zhou, L. Liu, Y. Zhong, A. Calway},
   journal={arXiv preprint arXiv:2308.05993},
   year={2023}
 }
