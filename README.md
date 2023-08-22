@@ -39,11 +39,12 @@ title = {{ You Are Here: Geolocation by Embedding Maps and Images}},
 booktitle =  In Proc. of the European Conference on Computer Vision (ECCV),
 year = {2020},
 }
+```
+```latex
 @article{zhou2023image,
   title={Image-based Geolocalization by Ground-to-2.5D Map Matching},
   author={Zhou, Mengjie and Liu, Liu and Zhong, Yiran},
   journal={arXiv preprint arXiv:2308.05993},
   year={2023}
 }
-```
 ```
