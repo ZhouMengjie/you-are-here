@@ -19,7 +19,7 @@ Currently, we provide:
 - Tested on Mac and Linux
 
 ### Instructions to run an experiment
-1. Define parameters in the corresponding configuration file depending on the type of features to use ESParams.m for old-version embedded descriptors, BSDParams.m for the case of BSDs, and MESParams.m for the multi-modal location descriptors.
+1. Define parameters in the corresponding configuration file depending on the type of features. Use ESParams.m for old-version embedded descriptors, BSDParams.m for the case of BSDs, and MESParams.m for the multi-modal location descriptors.
 2. Run Localisation.m. Results are stored in an array called "ranking.mat" which contains the summary of the position of the groud truth route among all possible candidates. Only the top-k positions are considered (defined in the configuration file). A zero rank means the ground truth route is not in the top-k. Also, a struct with the top-5 best-estimated routes is saved.
 3. Results will be automatically saved in ./results directory with a path depending on the parameters selected.
 4. Plot results using calculate_accuracy.m script.
