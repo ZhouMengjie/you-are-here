@@ -7,7 +7,7 @@ addpath(genpath(fullfile(pwd)))
 p.type = 'MES';               % Embedding space features
 p.name = '100%culling';       % A name for the experiment
 p.dataset = 'unionsquare5k';  % The name of the dataset 
-p.network = '2d';             % The name of the network (model), MES:2d, 2dsafapolar, dgcnn2to3
+p.network = '2dsafapolar';             % The name of the network (model), MES:2d, 2dsafapolar, dgcnn2to3
 
 p.T = 500;                    % Number of test turns
 p.mrl = 40;                   % Maximum route_length

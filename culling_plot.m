@@ -9,7 +9,7 @@ p.type = 'MES';               % Embedding space features
 p.turns = false;              % Whether to use turns in the localisation process
 p.topk = 1;                   % Save the topk best routes
 p.results_dir = 'results/MES';% Results directory
-p.network = 'dgcnn2to3';
+p.network = '2dsafapolar';
 
 datasets = {'hudsonriver5k', 'unionsquare5k', 'wallstreet5k'};
 legend_text = {'HR No-Culling - 91.4%', 'US No-Culling - 96.8%', 'WS No-Culling - 94.2%','HR Culling - 91.4%', 'US Culling - 96.8%', 'WS Culling - 93.8%'};

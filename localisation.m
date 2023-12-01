@@ -57,21 +57,22 @@ end
 
 time = toc;
 avg_time = time/p.T;
+disp(avg_time)
 
 
 %% Save localization test information
-switch p.type
-    case {'ES'}
-        path = fullfile(p.results_dir, p.dataset, num2str(p.turns), p.scale);
-    case {'BSD'}
-        path = fullfile(p.results_dir, p.dataset, num2str(p.turns));
-    case {'MES'}
-        path = fullfile(p.results_dir, p.dataset, num2str(p.turns), p.network);
-end
-
-
-if ~exist(path, 'dir')
-    mkdir(path)
-end
-file_name = fullfile(path, [p.name,'.mat']);
-save(file_name,'ranking','best_estimated_top5_routes');
+% switch p.type
+%     case {'ES'}
+%         path = fullfile(p.results_dir, p.dataset, num2str(p.turns), p.scale);
+%     case {'BSD'}
+%         path = fullfile(p.results_dir, p.dataset, num2str(p.turns));
+%     case {'MES'}
+%         path = fullfile(p.results_dir, p.dataset, num2str(p.turns), p.network);
+% end
+% 
+% 
+% if ~exist(path, 'dir')
+%     mkdir(path)
+% end
+% file_name = fullfile(path, [p.name,'.mat']);
+% save(file_name,'ranking','best_estimated_top5_routes');
