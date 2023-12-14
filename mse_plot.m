@@ -13,7 +13,7 @@ p.results_dir = 'results/MES';% Results directory
 
 datasets = {'hudsonriver5k', 'unionsquare5k', 'wallstreet5k'};
 legend_text = {'HR Ours -91.4%', 'US Ours - 96.8%', 'WS Ours - 93.8%','HR ES - 87.2%', 'US ES - 89.0%', 'WS ES - 87.2%'};
-p.network = {'2dsafapolar','2d'};
+p.network = {'2d','dgcnn2to3'};
 ndatasets = length(datasets);
 color = {'r','b',[0.4660,0.6740,0.1880]};
 ax = gca;
@@ -23,7 +23,7 @@ for t = 1:2
     for dset_index=1:ndatasets
         dataset = datasets{dset_index};
         path = fullfile(p.results_dir, dataset, num2str(p.turns), network, [p.name,'.mat']);
-        if strcmp(network, '2dsafapolar')
+        if strcmp(network, 'dgcnn2to3')
             linestyle = '-';
         else
             linestyle = '--';
@@ -31,8 +31,8 @@ for t = 1:2
         load(path,'ranking');
         acc = sum(ranking > 0 & ranking <= p.topk, 1) / size(ranking,1);
         
-        % file_name = fullfile('exps', [dataset,'_',network,'.mat']);     
-        % save(file_name,'acc');
+        file_name = fullfile('exps', [dataset,'_',network,'.mat']);     
+        save(file_name,'acc');
 
         x = 5:1:40;
         plot(ax, x, 100*acc(x), 'LineStyle', linestyle, 'LineWidth',2,'Color',color{dset_index});

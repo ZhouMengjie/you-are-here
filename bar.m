@@ -44,8 +44,8 @@ acc = sum(ranking > 0 & ranking <= p.topk, 1) / size(ranking,1);
 col = acc(1,range)';
 data(:,1) = col;
 
-% file_name = fullfile('exps', ['data.mat']);
-% save(file_name,'data');
+file_name = fullfile('exps', ['data.mat']);
+save(file_name,'data');
 
 data = 100 * data;
 
